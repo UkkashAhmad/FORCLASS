@@ -2,6 +2,8 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import authRouter from './routes/auth.js'
+import bookRoute from './routes/book.js'
+
 
 const app = express()
 
@@ -14,6 +16,9 @@ dotenv.config()
 // ROUTES // 
 
 app.use('/auth' , authRouter )
+
+
+app.use('/books', bookRoute)
 
 
 const PORT = process.env.PORT || 6000;
